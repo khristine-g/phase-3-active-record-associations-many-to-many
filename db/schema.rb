@@ -14,17 +14,15 @@ ActiveRecord::Schema.define(version: 2021_07_19_113221) do
 
   create_table "games", force: :cascade do |t|
     t.string "title"
-    t.string "genre"
-    t.string "platform"
-    t.integer "price"
+@@ -27,6 +27,13 @@
+    t.integer "game_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
   end
 
-  create_table "reviews", force: :cascade do |t|
-    t.integer "score"
-    t.string "comment"
-    t.integer "game_id"
+  create_table "users", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
